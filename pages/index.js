@@ -1,4 +1,3 @@
-import Link from "next/link";
 import AppLink from "../components/UI/AppLink/AppLink";
 
 const Index = () => {
