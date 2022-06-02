@@ -11,6 +11,9 @@ const Navigation = () => {
           <li className="nav__item">
             <AppLink href="/posts" text="Посты" />
           </li>
+          <li className="nav__item">
+            <AppLink href="/about" text="О Компании" />
+          </li>
         </ul>
       </nav>
       <style jsx>{`
