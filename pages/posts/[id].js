@@ -10,6 +10,7 @@ const Post = ({ post }) => {
     <Layout>
       <div className="container">
         <div className={styles.post}>
+          <hr />
           <AppLink
             className={styles.postLink}
             href="/posts"

@@ -14,7 +14,7 @@ const Posts = ({ posts }) => {
     <Layout>
       <div className={styles.posts}>
         <div className="container">
-          <h1>Страница постов</h1>
+          <h1 className={styles.postsTitle}>Страница постов</h1>
           <ul className={styles.postsList}>
             {posts.map((post) => (
               <Card key={post.id}>
