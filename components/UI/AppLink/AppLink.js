@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./AppLink.module.css";
 
-function AppLink({ text, href }) {
+function AppLink({ className = "", text, href }) {
   return (
     <Link href={href}>
-      <a className={styles.link}>{text}</a>
+      <a className={`${className} ${styles.link}`}>{text}</a>
     </Link>
   );
 }

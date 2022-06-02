@@ -1,21 +1,32 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { Button, Card } from "react-bootstrap";
+import styles from "../styles/Posts.module.scss";
 
 const Posts = ({ posts }) => {
+  const router = useRouter();
+
+  const handleClick = (id) => {
+    router.push(`/posts/${id}`);
+  };
+
   return (
-    <div>
-      <h1>Страница постов</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              <a>
-                <span>{post.title}</span>
-                <span>{post.body}</span>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.posts}>
+      <div className="container">
+        <h1>Страница постов</h1>
+        <ul className={styles.postsList}>
+          {posts.map((post) => (
+            <Card key={post.id}>
+              <Card.Body>
+                <Card.Title>{post.title}</Card.Title>
+                <Card.Text>{post.body}</Card.Text>
+                <Button variant="primary" onClick={() => handleClick(post.id)}>
+                  Read more
+                </Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

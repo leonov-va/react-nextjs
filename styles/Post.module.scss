@@ -1,5 +1,19 @@
 .post {
-  h1 {
-    color: red;
+  padding: 20px;
+
+  &Link {
+    font-size: 14px;
+  }
+
+  &Id {
+    font-weight: 700;
+  }
+
+  &Title {
+    font-size: 40px;
+  }
+
+  &Text {
+    line-height: 1.6;
   }
 }

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import AppLink from "../../components/UI/AppLink/AppLink";
 import styles from "../../styles/Post.module.scss";
 
 const Post = ({ post }) => {
@@ -6,8 +7,16 @@ const Post = ({ post }) => {
 
   return (
     <div className={styles.post}>
-      <h1>Пост с id {query.id}</h1>
-      <h2>{post.title}</h2>
+      <AppLink
+        className={styles.postLink}
+        href="/posts"
+        text="<- Back to posts"
+      />
+      <hr />
+      <div className={styles.postId}>{`#${query.id}`}</div>
+      <h1 className={styles.postTitle}>{post.title}</h1>
+      <p className={styles.postText}>{post.body}</p>
+      <hr />
     </div>
   );
 };
