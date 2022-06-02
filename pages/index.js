@@ -1,13 +1,12 @@
-import Header from "../components/Header/Header";
+import Layout from "../components/Layout";
 
 const Index = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="container">
         <h1>Главная страница</h1>
       </div>
-    </>
+    </Layout>
   );
 };
 

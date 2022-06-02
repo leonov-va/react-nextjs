@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { Button, Card } from "react-bootstrap";
+import Layout from "../components/Layout";
 import styles from "../styles/Posts.module.scss";
 
 const Posts = ({ posts }) => {
@@ -10,24 +11,29 @@ const Posts = ({ posts }) => {
   };
 
   return (
-    <div className={styles.posts}>
-      <div className="container">
-        <h1>Страница постов</h1>
-        <ul className={styles.postsList}>
-          {posts.map((post) => (
-            <Card key={post.id}>
-              <Card.Body>
-                <Card.Title>{post.title}</Card.Title>
-                <Card.Text>{post.body}</Card.Text>
-                <Button variant="primary" onClick={() => handleClick(post.id)}>
-                  Read more
-                </Button>
-              </Card.Body>
-            </Card>
-          ))}
-        </ul>
+    <Layout>
+      <div className={styles.posts}>
+        <div className="container">
+          <h1>Страница постов</h1>
+          <ul className={styles.postsList}>
+            {posts.map((post) => (
+              <Card key={post.id}>
+                <Card.Body>
+                  <Card.Title>{post.title}</Card.Title>
+                  <Card.Text>{post.body}</Card.Text>
+                  <Button
+                    variant="primary"
+                    onClick={() => handleClick(post.id)}
+                  >
+                    Read more
+                  </Button>
+                </Card.Body>
+              </Card>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
